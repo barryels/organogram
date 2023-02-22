@@ -2,18 +2,22 @@
   "name": "vite-template-solid",
   "version": "0.0.0",
   "description": "",
+  "license": "MIT",
   "scripts": {
     "prepare": "husky install",
     "githook:pre-commit": "npm run format && npm run lint",
     "format": "prettier --ignore-path .gitignore --write ./",
     "lint": "npm run lint:js",
     "lint:js": "eslint --cache \"src/**/*.{js,jsx,ts,tsx,mjs}\"",
+    "test:e2e": "npx cypress open --e2e --browser chrome",
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
-  "license": "MIT",
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -36,6 +40,9 @@
     "solid-js": "^1.6.10"
   },
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.4",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@testing-library/cypress": "^9.0.0",
     "@typescript-eslint/parser": "^5.53.0",
     "cypress": "^12.6.0",
     "eslint": "^8.34.0",
