@@ -1,26 +1,41 @@
+import { createResource, For } from "solid-js";
 import type { Component } from "solid-js";
 
-import logo from "./logo.svg";
 import styles from "./App.module.css";
 
+const fetchOrganisation = async () =>
+  (await fetch(`./organisations/current.json`)).json();
+
 const App: Component = () => {
+  const [organisation] = createResource(fetchOrganisation);
+
+  // fetch("./organisations/current.json")
+  //   .then((response) => {
+  //     console.log(response.status);
+  //   })
+  //   .catch(() => {
+  //     console.info("Nothing found");
+  //   });
+
   return (
     <div class={styles.App}>
       <header class={styles.header}>
-        <h1>Hello World!</h1>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
+        <h1>{organisation() && organisation().name}</h1>
       </header>
+
+      <section>
+        {organisation() && (
+          <ul aria-label="People">
+            <For each={organisation().people}>
+              {(person) => (
+                <li>
+                  <a target="_blank">{person.name}</a>
+                </li>
+              )}
+            </For>
+          </ul>
+        )}
+      </section>
     </div>
   );
 };
