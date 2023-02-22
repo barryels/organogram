@@ -10,7 +10,10 @@ export default defineConfig({
     viewportHeight: 614,
     viewportWidth: 360,
     video: false,
-    async setupNodeEvents(on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions): Promise<Cypress.PluginConfigOptions> {
+    async setupNodeEvents(
+      on: Cypress.PluginEvents,
+      config: Cypress.PluginConfigOptions
+    ): Promise<Cypress.PluginConfigOptions> {
       await addCucumberPreprocessorPlugin(on, config);
 
       on(
