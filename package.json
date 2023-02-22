@@ -25,7 +25,8 @@
     },
     "extends": [
       "eslint:recommended",
-      "plugin:solid/typescript"
+      "plugin:solid/typescript",
+      "plugin:cypress/recommended"
     ],
     "plugins": [
       "solid"
@@ -36,7 +37,9 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.53.0",
+    "cypress": "^12.6.0",
     "eslint": "^8.34.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-solid": "^0.10.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.1.2",
