@@ -13,7 +13,10 @@ export default defineConfig({
     viewportHeight: 614,
     viewportWidth: 360,
     video: false,
-    async setupNodeEvents(on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions): Promise<Cypress.PluginConfigOptions> {
+    async setupNodeEvents(
+      on: Cypress.PluginEvents,
+      config: Cypress.PluginConfigOptions
+    ): Promise<Cypress.PluginConfigOptions> {
       config.baseUrl = process.env.CYPRESS_BASE_URL || "";
 
       await addCucumberPreprocessorPlugin(on, config);
