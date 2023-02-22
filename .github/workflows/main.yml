@@ -18,7 +18,7 @@ concurrency:
 jobs:
   deploy:
     env:
-      VITE_SERVER_BASE: /organogram/
+      VITE_BASE: /organogram/
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,10 +31,12 @@ jobs:
         with:
           node-version: 18
           cache: "npm"
+      - name: Debug
+        run: echo $VITE_BASE
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: VITE_SERVER_BASE=/organogram/ npm run build
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

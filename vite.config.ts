@@ -6,8 +6,8 @@ export default ({ mode }: any) => {
 
   return defineConfig({
     plugins: [solidPlugin()],
+    base: process.env.VITE_BASE || "/",
     server: {
-      base: process.env.VITE_SERVER_BASE || "/",
       port: parseInt(process.env.VITE_SERVER_PORT || "3000"),
     },
     build: {
