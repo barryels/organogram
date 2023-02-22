@@ -7,7 +7,8 @@ export default ({ mode }: any) => {
   return defineConfig({
     plugins: [solidPlugin()],
     server: {
-      port: parseInt(process.env.VITE_PORT || "3000"),
+      base: process.env.VITE_SERVER_BASE || "/",
+      port: parseInt(process.env.VITE_SERVER_PORT || "3000"),
     },
     build: {
       target: "esnext",
