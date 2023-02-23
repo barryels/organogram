@@ -51,7 +51,7 @@ When("the user visits the {string} page", (pageName: string) => {
 
 Given("the selected organisation is {string}", (organisationName: string) => {
   const organisation = findMockOrganisationFromName(organisationName);
-  cy.intercept("http://localhost:3001/organogram/organisations/current.json", {
+  cy.intercept(`${Cypress.config().baseUrl}/organisations/current.json`, {
     statusCode: 200,
     body: organisation,
   });
