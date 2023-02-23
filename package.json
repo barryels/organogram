@@ -41,13 +41,25 @@
       "process": true
     }
   },
+  "nyc": {
+    "report-dir": "coverage--e2e",
+    "include": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "exclude": [
+      "src/**/*.d.ts",
+      "node_modules/"
+    ]
+  },
   "dependencies": {
     "solid-js": "^1.6.10"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^15.1.4",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@cypress/code-coverage": "^3.10.0",
     "@testing-library/cypress": "^9.0.0",
+    "@types/cypress__code-coverage": "^3.10.0",
     "@typescript-eslint/parser": "^5.53.0",
     "cypress": "^12.6.0",
     "dotenv": "^16.0.3",
@@ -61,6 +73,7 @@
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
     "vite": "^4.1.1",
+    "vite-plugin-istanbul": "^4.0.0",
     "vite-plugin-solid": "^2.5.0"
   }
 }

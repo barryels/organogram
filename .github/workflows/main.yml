@@ -3,6 +3,8 @@ name: Main
 on:
   push:
     branches: ["main"]
+  pull_request:
+    types: [opened, synchronize, reopened]
 
   workflow_dispatch:
 
@@ -16,6 +18,35 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  tests:
+    env:
+      VITE_BASE: /organogram/
+      CYPRESS_BASE_URL: http://localhost:3000
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+      - name: Install dependencies
+        run: npm install
+      - name: Run app
+        run: npm start
+      - name: Acceptance Tests
+        uses: cypress-io/github-action@v5
+        with:
+          start: npm run test:e2e:headless
+          wait-on: ${{CYPRESS_BASE_URL}}
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+        with:
+          debug: true
+
   deploy:
     env:
       VITE_BASE: /organogram/
@@ -31,8 +62,6 @@ jobs:
         with:
           node-version: 18
           cache: "npm"
-      - name: Debug
-        run: echo $VITE_BASE
       - name: Install dependencies
         run: npm install
       - name: Build

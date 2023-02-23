@@ -1,4 +1,6 @@
-node_modules
-dist
-.eslintcache
+/node_modules
+/.eslintcache
 .env
+/dist
+/coverage--e2e
+/.nyc_output
