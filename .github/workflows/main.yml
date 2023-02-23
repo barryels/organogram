@@ -39,7 +39,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           start: npm run test:e2e:headless
-          wait-on: ${{CYPRESS_BASE_URL}}
+          wait-on: http://localhost:3000
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         env:
