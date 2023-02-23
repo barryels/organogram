@@ -6,8 +6,5 @@
 /.nyc_output
 /coverage--e2e
 /cypress/downloads/*
-!/cypress/downloads/.gitkeep
 /cypress/screenshots/*
-!/cypress/screenshots/.gitkeep
 /cypress/videos/*
-!/cypress/videos/.gitkeep
