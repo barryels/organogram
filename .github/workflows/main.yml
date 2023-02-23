@@ -33,12 +33,12 @@ jobs:
       - name: Acceptance Tests
         uses: cypress-io/github-action@v5
         with:
-          start: npm start & npm run test:e2e:headless
-          wait-on: http://localhost:3001
+          start: npm run test:e2e:ci
+          wait-on: http://localhost:5173
         env:
           VITE_BASE: /organogram/
-          VITE_SERVER_PORT: 3001
-          CYPRESS_BASE_URL: http://localhost:3001
+          VITE_SERVER_PORT: 5173
+          CYPRESS_BASE_URL: http://localhost:5173
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         env:
