@@ -7,7 +7,6 @@
 3. Update the variables as necessary
 4. Run: `npm install`
 
-
 ## Usage
 
 ### `npm dev` or `npm start`
