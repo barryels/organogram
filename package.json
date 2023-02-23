@@ -14,7 +14,7 @@
     "test:e2e:headless": "cypress run",
     "test:e2e:headless:watch": "npx nodemon -e features,feature,js,json,jsx,ts,tsx,css --exec npm run test:e2e:headless",
     "start": "vite",
-    "dev": "vite",
+    "dev": "concurrently --kill-others --success=first \"npm:start\" \"npm:test:e2e:headless:watch\"",
     "build": "vite build",
     "serve": "vite preview"
   },
