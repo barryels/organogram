@@ -1,8 +1,11 @@
 {
-  "name": "Local",
+  "name": "ACME",
   "people": [
-    {
-      "name": "Test 1"
-    }
+    { "id": "1b24be77-b80a-43d4-b058-4dc70529cd5f", "name": "Anita N Smith" },
+    { "id": "20adf084-2135-448e-81a9-da2f837379f3", "name": "Jeremy Tamsin" },
+    { "id": "559ab840-9a9d-4b9a-85d5-ed4f71035ba0", "name": "Yarik Aina" },
+    { "id": "5ee9a24e-968d-4e98-b428-16e2a8f269e7", "name": "Juliet Boban" },
+    { "id": "4e44b75d-ee8e-49c1-b942-ae9bafd580b4", "name": "Mao Josie" },
+    { "id": "67889dd6-9487-47dd-a1f6-0100c7caf7d7", "name": "Ebba Titus" }
   ]
 }

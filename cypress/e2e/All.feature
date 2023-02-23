@@ -7,3 +7,8 @@ Feature: All
     And the following list of people should be visible
       | name          |
       | Anita N Smith |
+      | Jeremy Tamsin |
+      | Yarik Aina    |
+      | Juliet Boban  |
+      | Mao Josie     |
+      | Ebba Titus    |
