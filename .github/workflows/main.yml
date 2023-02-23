@@ -33,12 +33,10 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm install
-      - name: Run app
-        run: npm start
       - name: Acceptance Tests
         uses: cypress-io/github-action@v5
         with:
-          start: npm run test:e2e:headless
+          start: npm start & npm run test:e2e:headless
           wait-on: http://localhost:3000
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
@@ -48,6 +46,7 @@ jobs:
           debug: true
 
   deploy:
+    needs: tests
     env:
       VITE_BASE: /organogram/
     environment:
