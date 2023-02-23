@@ -6,6 +6,7 @@ exclude_patterns:
   - "cypress"
   - "node_modules"
   - "public"
+  - ".codeclimate.yml"
   - ".env.example"
   - ".eslintcache"
   - ".gitignore"
@@ -18,3 +19,4 @@ exclude_patterns:
   - "README.md"
   - "tsconfig.json"
   - "vite.config.ts"
+  - "*.svg"
