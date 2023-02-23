@@ -9,14 +9,6 @@ const fetchOrganisation = async () =>
 const App: Component = () => {
   const [organisation] = createResource(fetchOrganisation);
 
-  // fetch("./organisations/current.json")
-  //   .then((response) => {
-  //     console.log(response.status);
-  //   })
-  //   .catch(() => {
-  //     console.info("Nothing found");
-  //   });
-
   return (
     <div class={styles.App}>
       <header class={styles.header}>
