@@ -19,10 +19,6 @@ concurrency:
 
 jobs:
   tests:
-    env:
-      VITE_BASE: /organogram/
-      VITE_SERVER_PORT: 3001
-      CYPRESS_BASE_URL: http://localhost:3001
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,6 +35,10 @@ jobs:
         with:
           start: npm start & npm run test:e2e:headless
           wait-on: http://localhost:3001
+        env:
+          VITE_BASE: /organogram/
+          VITE_SERVER_PORT: 3001
+          CYPRESS_BASE_URL: http://localhost:3001
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         env:
