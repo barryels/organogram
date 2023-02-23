@@ -34,7 +34,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           start: npm run test:e2e:ci
-          wait-on: http://localhost:5173
+          wait-on: http://localhost:5173/organogram/
         env:
           VITE_BASE: /organogram/
           VITE_SERVER_PORT: 5173
