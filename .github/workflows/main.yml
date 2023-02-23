@@ -30,7 +30,7 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm install
-      - name: Acceptance Tests
+      - name: Acceptance tests
         uses: cypress-io/github-action@v5
         with:
           start: npm run test:e2e:ci
@@ -39,7 +39,7 @@ jobs:
           VITE_BASE: /organogram/
           VITE_SERVER_PORT: 5173
           CYPRESS_BASE_URL: http://localhost:5173/organogram/
-      - name: Test & publish code coverage
+      - name: Publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
@@ -66,7 +66,7 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
