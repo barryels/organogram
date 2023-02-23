@@ -43,7 +43,7 @@
     }
   },
   "nyc": {
-    "report-dir": "coverage--e2e",
+    "report-dir": "coverage",
     "include": [
       "src/**/*.{js,jsx,ts,tsx}"
     ],
