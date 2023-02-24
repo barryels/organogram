@@ -24,3 +24,20 @@ Feature: All
       | Juliet Boban  |
       | Mao Josie     |
       | Ebba Titus    |
+
+  Scenario: Use search box to filter people by name
+    When the user visits the "Home" page
+    And they type "b" in the "Search by name" input
+    And the following list of people should be visible
+      | name          |
+      | Juliet Boban  |
+      | Ebba Titus    |
+    And they type "b" in the "Search by name" input
+    And the following list of people should be visible
+      | name          |
+      | Ebba Titus    |
+    When they clear the "Search by name" input
+    And they type "ANI" in the "Search by name" input
+    And the following list of people should be visible
+      | name          |
+      | Anita N Smith |

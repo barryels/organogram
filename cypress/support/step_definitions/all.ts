@@ -53,3 +53,14 @@ Then("the following list of people should be visible", (dataTable: any) => {
       cy.wrap(personItem).should("contain.text", dataTableItem.name);
     });
 });
+
+When("they clear the {string} input", (textFieldLabel: string) => {
+  cy.findByLabelText(textFieldLabel).clear();
+});
+
+When(
+  "they type {string} in the {string} input",
+  (textFieldValue: string, textFieldLabel: string) => {
+    cy.findByLabelText(textFieldLabel).type(textFieldValue);
+  }
+);
