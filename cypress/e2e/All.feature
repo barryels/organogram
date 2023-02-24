@@ -1,7 +1,6 @@
 Feature: All
 
   Scenario: Shows a list of people in an organisation
-    Given the selected organisation is "ACME"
     When the user visits the "Home" page
     Then the "ACME" heading should be visible
     And the following list of people should be visible
