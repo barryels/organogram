@@ -48,6 +48,7 @@ const App: Component = () => {
           <button type="submit">Search</button>
         </form>
 
+        <h2>Teams</h2>
         <ul aria-label="Teams">
           <For each={organisation().teams}>
             {(teams) => (
@@ -58,6 +59,7 @@ const App: Component = () => {
           </For>
         </ul>
 
+        <h2>People</h2>
         <ul aria-label="People">
           <For each={peopleList()}>
             {(person) => (

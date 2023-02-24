@@ -6,7 +6,75 @@
     { "id": "559ab840-9a9d-4b9a-85d5-ed4f71035ba0", "name": "Yarik Aina" },
     { "id": "5ee9a24e-968d-4e98-b428-16e2a8f269e7", "name": "Juliet Boban" },
     { "id": "4e44b75d-ee8e-49c1-b942-ae9bafd580b4", "name": "Mao Josie" },
-    { "id": "67889dd6-9487-47dd-a1f6-0100c7caf7d7", "name": "Ebba Titus" }
+    { "id": "67889dd6-9487-47dd-a1f6-0100c7caf7d7", "name": "Ebba Titus" },
+    {
+      "id": "109f2a30-6ece-4878-bc90-62831c055043",
+      "name": "Carson Rodriguez"
+    },
+    { "id": "ad114e14-0e36-4b79-9637-6641fcb12dae", "name": "Itzel Leonard" },
+    { "id": "3e8defb1-e7a9-484d-9630-a2be73f32c2e", "name": "Paulina Rice" },
+    { "id": "08ac9f21-4106-4fa1-bc3b-df1f3a6a045e", "name": "Damon Ross" },
+    { "id": "ee4e889e-e5a5-40b6-8ece-18047b5742c7", "name": "Rhys Wolfe" },
+    { "id": "364fae30-ffa6-4217-9c44-8b382b67bd67", "name": "Mathias Rowland" },
+    { "id": "b2b0cf18-8517-43cf-bcf8-e31cff927454", "name": "Cosme Calvo" },
+    {
+      "id": "96ea9090-ec65-4f2e-8771-01d18bba1475",
+      "name": "Marshall Schaefer"
+    },
+    { "id": "506ef8da-d3ab-4491-bee2-c25bd2448da6", "name": "Bentley French" },
+    { "id": "b9f4e460-bd40-4f61-9824-9bf35bc05daf", "name": "Harper Guerra" },
+    { "id": "0952b81c-6582-4f63-a5ce-bb1b74dd4c50", "name": "Inés Ferrer" },
+    { "id": "3bcff37c-1777-47fe-9eb9-970b4687ca68", "name": "Aurora Cantu" },
+    { "id": "2e73c4b5-2291-400e-9710-f269fd31f984", "name": "Cayden Smith" },
+    { "id": "8dbed2d7-b5cb-4ca2-aa24-b38e164ad3ee", "name": "Drake Collins" },
+    { "id": "70340ec7-55b5-4c88-995b-574261df11a3", "name": "Ricardo Crespo" },
+    { "id": "a971559d-e316-4e8c-b631-2299ebd91068", "name": "Mara Welch" },
+    { "id": "7e255a56-5dad-4527-8bd6-98d4f6a4ab60", "name": "Slade Logan" },
+    { "id": "4e7b3523-6871-4996-9148-f2b0766b8107", "name": "Jovany Coffey" },
+    { "id": "13428204-9b66-4068-ad55-d9064c31adc8", "name": "Jaydon Dennis" },
+    { "id": "71b6e3f2-47d5-4299-9ccb-2d3cd9465b34", "name": "Daniel Santiago" },
+    { "id": "5c7714dc-6202-4ab4-8b8c-240bad14f584", "name": "Arnav Lam" },
+    { "id": "eea59fd7-23f4-4cb7-b519-ccdddd196f59", "name": "Dax Joyce" },
+    { "id": "57e93344-d89b-4dff-b8cf-50638d2876f8", "name": "Aitor Peña" },
+    { "id": "afabae4c-797b-4a00-b9e7-38ce2bf28040", "name": "Marcos Durán" },
+    { "id": "2417b793-788b-4d4d-b71f-be1e664abcaa", "name": "Damon Kaufman" },
+    {
+      "id": "4d33a1e8-b294-41a9-97f9-fd584bfbfd74",
+      "name": "Ifigenia Serrano"
+    },
+    { "id": "e6eb8eb0-7a09-40dc-9377-db10c2c68320", "name": "Arturo Marín" },
+    {
+      "id": "c0a6602c-aca7-4fa5-89cf-191c11cd2a5c",
+      "name": "Carolina Velasquez"
+    },
+    { "id": "4f928bbf-8240-4c95-881a-bb6dce71b2d1", "name": "Nehemiah Murphy" },
+    { "id": "2c243594-c65e-48c0-8817-1acd9275cc68", "name": "Marco Marks" },
+    { "id": "c758d86a-c3b8-4262-b41a-d263ee99ec02", "name": "Leandro Ortiz" },
+    { "id": "c98d9f4f-8221-4617-a342-dd6babedf64c", "name": "Armando Mejia" },
+    { "id": "d8990f00-8711-41da-b207-923594f94de9", "name": "Alberto Gregory" },
+    { "id": "5bee6f14-8b5f-4993-91e5-eaa375050b4d", "name": "Amirah Sheppard" },
+    { "id": "f9f1a797-55a4-41a2-993a-72aee2e5f95d", "name": "Chaim Hawkins" },
+    { "id": "2aca555e-c1fd-4136-8108-82e1b652e983", "name": "Makenna Lucas" },
+    { "id": "e26b5ad5-258c-4a73-be07-c3d2780d85d1", "name": "Dorian Osborne" },
+    { "id": "f25f5088-83a0-48f7-b9ce-c5b5dc058c50", "name": "Lucía Cambil" },
+    {
+      "id": "5e8f31e0-f7dc-4897-a591-2b6cc493f981",
+      "name": "Eduvigis Fernández"
+    },
+    { "id": "515a205b-034a-41b4-8645-9c77d6d4715d", "name": "Aaron Wise" },
+    {
+      "id": "9d29869e-6301-4d98-b354-9ec446388e8c",
+      "name": "Dayanara Rosario"
+    },
+    { "id": "e378570d-e411-4b9b-916e-535ac4653a35", "name": "Amya Greene" },
+    { "id": "4a6e7428-99bc-498c-a2ad-4250f23f5817", "name": "Marin Terrell" },
+    { "id": "7f39025a-174e-4c81-9716-b6a13531f52b", "name": "Jamie Ashley" },
+    { "id": "f190806d-3046-4361-b640-a1119a59557c", "name": "Dominique Burke" },
+    {
+      "id": "3e8e52e2-8fdc-4b46-9079-8079ccb5953f",
+      "name": "Ascensión Cortés"
+    },
+    { "id": "32f3e3b3-7c35-4413-a5f5-3d4e03770557", "name": "Darien Novak" }
   ],
   "teams": [
     { "id": "b2414dc3-f7f3-4e6e-bdd5-afe045864312", "name": "No Lucks Given" },
