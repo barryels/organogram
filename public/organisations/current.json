@@ -7,5 +7,36 @@
     { "id": "5ee9a24e-968d-4e98-b428-16e2a8f269e7", "name": "Juliet Boban" },
     { "id": "4e44b75d-ee8e-49c1-b942-ae9bafd580b4", "name": "Mao Josie" },
     { "id": "67889dd6-9487-47dd-a1f6-0100c7caf7d7", "name": "Ebba Titus" }
+  ],
+  "teams": [
+    { "id": "b2414dc3-f7f3-4e6e-bdd5-afe045864312", "name": "No Lucks Given" },
+    { "id": "f428e42c-c931-49ce-b6b1-c4be90a72964", "name": "Agatha Crispy" },
+    { "id": "ec916f6d-5363-46bc-b440-d3d3499f329a", "name": "Baking Bad" },
+    {
+      "id": "9516bb8e-95bb-447f-b186-4a914590a16b",
+      "name": "What's Louvre Got to Do With It"
+    },
+    { "id": "8e9c9780-bd5d-4668-bf19-a275d6631ece", "name": "We're On Mute" },
+    {
+      "id": "e8396706-82ab-4a6e-a015-f1fe439f29ed",
+      "name": "Ambitious Bishes"
+    },
+    {
+      "id": "13de7fc3-aaae-456a-b85b-e732461bd546",
+      "name": "Down for the Account"
+    },
+    { "id": "b8868d91-1732-4307-8662-1c3b7c3dfa81", "name": "Slack Attack" },
+    {
+      "id": "cf3a4b86-97b4-4650-a8b8-b671900c4fe7",
+      "name": "Mission Implausible"
+    },
+    {
+      "id": "8cdf7314-4185-4794-a0cb-c0406463399d",
+      "name": "Watching Cat Videos At Work"
+    },
+    {
+      "id": "2d5c7225-c086-4a00-8830-5d098139a0aa",
+      "name": "Zoom-Crashing Pets"
+    }
   ]
 }

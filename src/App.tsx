@@ -6,7 +6,7 @@ import styles from "./App.module.css";
 
 const App: Component = () => {
   const [organisation] = createResource(getCurrentOrganisation, {
-    initialValue: { name: "", people: [] },
+    initialValue: { name: "", people: [], teams: [] },
   });
 
   return (
@@ -18,6 +18,16 @@ const App: Component = () => {
       </header>
 
       <section>
+        <ul aria-label="Teams">
+          <For each={organisation().teams}>
+            {(teams) => (
+              <li>
+                <a target="_blank">{teams.name}</a>
+              </li>
+            )}
+          </For>
+        </ul>
+
         <ul aria-label="People">
           <For each={organisation().people}>
             {(person) => (

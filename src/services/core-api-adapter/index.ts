@@ -3,9 +3,15 @@ interface Person {
   name: string;
 }
 
+interface Team {
+  id: string;
+  name: string;
+}
+
 interface Organisation {
   name: string;
   people: Person[];
+  teams: Team[];
 }
 
 export function getCurrentOrganisation(): Promise<Organisation> {

@@ -34,6 +34,16 @@ Then("the {string} text should be hidden", (textContent: string) => {
   cy.findByText(textContent).should("not.exist");
 });
 
+Then("the following list of teams should be visible", (dataTable: any) => {
+  const dataTableItems = dataTable.hashes();
+  cy.get(`ul[aria-label='Teams'] li`)
+    .should("have.length", dataTableItems.length)
+    .each((personItem, index) => {
+      const dataTableItem = dataTableItems[index];
+      cy.wrap(personItem).should("contain.text", dataTableItem.name);
+    });
+});
+
 Then("the following list of people should be visible", (dataTable: any) => {
   const dataTableItems = dataTable.hashes();
   cy.get(`ul[aria-label='People'] li`)
