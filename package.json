@@ -10,11 +10,11 @@
     "lint": "npm run lint:js",
     "lint:js": "eslint --cache \"src/**/*.{js,jsx,ts,tsx,mjs}\"",
     "test:e2e": "npx cypress open --e2e --browser chrome",
-    "test:e2e:ci": "concurrently --kill-others --success=first \"npm:start\" \"npm:test:e2e:headless\"",
+    "test:e2e:ci": "concurrently \"npm:start\" \"npm:test:e2e:headless\"",
     "test:e2e:headless": "cypress run",
     "test:e2e:headless:watch": "npx nodemon -e features,feature,js,json,jsx,ts,tsx,css --exec npm run test:e2e:headless",
     "start": "vite",
-    "dev": "concurrently --kill-others --success=first \"npm:start\" \"npm:test:e2e:headless:watch\"",
+    "dev": "concurrently \"npm:start\" \"npm:test:e2e:headless:watch\"",
     "build": "vite build",
     "serve": "vite preview"
   },
