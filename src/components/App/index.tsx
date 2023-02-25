@@ -51,23 +51,28 @@ const App: Component = () => {
           <button type="submit">Search</button>
         </form>
 
-        <h2>Teams</h2>
-        <ul aria-label="Teams">
-          <For each={organisation().teams}>
-            {(teams) => (
-              <li>
-                <a target="_blank">{teams.name}</a>
-              </li>
-            )}
-          </For>
-        </ul>
+        <hr />
 
         <h2>People</h2>
         <ul aria-label="People">
           <For each={peopleList()}>
             {(person) => (
               <li>
-                <a target="_blank">{person.name}</a>
+                <h3>{person.name}</h3>
+                <h4>{person.title}</h4>
+              </li>
+            )}
+          </For>
+        </ul>
+
+        <hr />
+
+        <h2>Teams</h2>
+        <ul aria-label="Teams">
+          <For each={organisation().teams}>
+            {(team) => (
+              <li>
+                <h3>{team.name}</h3>
               </li>
             )}
           </For>

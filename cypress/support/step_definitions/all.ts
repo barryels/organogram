@@ -36,21 +36,28 @@ Then("the {string} text should be hidden", (textContent: string) => {
 
 Then("the following list of teams should be visible", (dataTable: any) => {
   const dataTableItems = dataTable.hashes();
-  cy.get(`ul[aria-label='Teams'] li`)
+  cy.get('ul[aria-label="Teams"] li')
     .should("have.length", dataTableItems.length)
-    .each((personItem, index) => {
+    .each((teamItem, index) => {
       const dataTableItem = dataTableItems[index];
-      cy.wrap(personItem).should("contain.text", dataTableItem.name);
+      cy.wrap(teamItem).within(() => {
+        cy.findByRole("heading", { name: dataTableItem.name });
+      });
     });
 });
 
 Then("the following list of people should be visible", (dataTable: any) => {
   const dataTableItems = dataTable.hashes();
-  cy.get(`ul[aria-label='People'] li`)
+  cy.get('ul[aria-label="People"] li')
     .should("have.length", dataTableItems.length)
     .each((personItem, index) => {
       const dataTableItem = dataTableItems[index];
-      cy.wrap(personItem).should("contain.text", dataTableItem.name);
+      cy.wrap(personItem).within(() => {
+        cy.findByRole("heading", { name: dataTableItem.name });
+        if (dataTableItem.title) {
+          cy.findByRole("heading", { name: dataTableItem.title });
+        }
+      });
     });
 });
 
