@@ -36,7 +36,7 @@ Then("the {string} text should be hidden", (textContent: string) => {
 
 Then("the following list of teams should be visible", (dataTable: any) => {
   const dataTableItems = dataTable.hashes();
-  cy.get('ul[aria-label="Teams"] li')
+  cy.get('ul[aria-label="Teams"] > li')
     .should("have.length", dataTableItems.length)
     .each((teamItem, index) => {
       const dataTableItem = dataTableItems[index];
@@ -48,14 +48,33 @@ Then("the following list of teams should be visible", (dataTable: any) => {
 
 Then("the following list of people should be visible", (dataTable: any) => {
   const dataTableItems = dataTable.hashes();
-  cy.get('ul[aria-label="People"] li')
+  cy.get('ul[aria-label="People"] > li')
     .should("have.length", dataTableItems.length)
-    .each((personItem, index) => {
+    .each((personElement, index) => {
       const dataTableItem = dataTableItems[index];
-      cy.wrap(personItem).within(() => {
+
+      cy.wrap(personElement).within(() => {
         cy.findByRole("heading", { name: dataTableItem.name });
+
         if (dataTableItem.title) {
           cy.findByRole("heading", { name: dataTableItem.title });
+        }
+
+        if (dataTableItem.tools) {
+          const dataTableItemPersonTools = commaSeparatedStingToArray(
+            dataTableItem.tools
+          );
+
+          cy.get('ul[aria-label="Tools"] > li')
+            .should("have.length", dataTableItemPersonTools.length)
+            .each((toolsListElement, index) => {
+              const dataTableItemToolName = dataTableItemPersonTools[index];
+
+              cy.wrap(toolsListElement).should(
+                "contain.text",
+                dataTableItemToolName
+              );
+            });
         }
       });
     });
@@ -71,3 +90,9 @@ When(
     cy.findByLabelText(textFieldLabel).type(textFieldValue);
   }
 );
+
+function commaSeparatedStingToArray(commaSeparatedSting: string) {
+  return commaSeparatedSting.split(",").map(function (item: string) {
+    return item.trim();
+  });
+}

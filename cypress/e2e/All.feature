@@ -1,6 +1,6 @@
 Feature: All
 
-  Scenario: Shows a list of people and teams in an organisation
+  Scenario: Shows a list of teams in an organisation
     When the user visits the "Home" page
     Then the "ACME" heading should be visible
     And the following list of teams should be visible
@@ -16,61 +16,65 @@ Feature: All
       | Mission Implausible             |
       | Watching Cat Videos At Work     |
       | Zoom-Crashing Pets              |
+
+  Scenario: Shows a list of people in an organisation
+    When the user visits the "Home" page
+    Then the "ACME" heading should be visible
     And the following list of people should be visible
-      | name               | title                 |
-      | Anita N Smith      | CEO                   |
-      | Jeremy Tamsin      | Executive Assistant   |
-      | Yarik Aina         | CPO                   |
-      | Juliet Boban       | Senior Talent Manager |
-      | Mao Josie          | CFO                   |
-      | Ebba Titus         | Finance Admin         |
-      | Carson Rodriguez   | Finance Admin         |
-      | Itzel Leonard      | New Business          |
-      | Paulina Rice       | CTO                   |
-      | Damon Ross         | Business Head         |
-      | Rhys Wolfe         | Business Head         |
-      | Mathias Rowland    | Product Owner         |
-      | Cosme Calvo        | Product Owner         |
-      | Marshall Schaefer  | Product Owner         |
-      | Bentley French     | Designer              |
-      | Harper Guerra      | Designer              |
-      | Inés Ferrer        | Designer              |
-      | Aurora Cantu       | Designer              |
-      | Cayden Smith       | Designer              |
-      | Drake Collins      | Designer              |
-      | Ricardo Crespo     | Designer              |
-      | Mara Welch         | Designer              |
-      | Slade Logan        | Copywriter            |
-      | Jovany Coffey      | Copywriter            |
-      | Jaydon Dennis      | Copywriter            |
-      | Daniel Santiago    | Copywriter            |
-      | Arnav Lam          | Copywriter            |
-      | Dax Joyce          | Copywriter            |
-      | Aitor Peña         | Copywriter            |
-      | Marcos Durán       | Developer             |
-      | Damon Kaufman      | Developer             |
-      | Ifigenia Serrano   | Developer             |
-      | Arturo Marín       | Developer             |
-      | Carolina Velasquez | Developer             |
-      | Nehemiah Murphy    | Developer             |
-      | Marco Marks        | Developer             |
-      | Leandro Ortiz      | Developer             |
-      | Armando Mejia      | Developer             |
-      | Alberto Gregory    | Developer             |
-      | Amirah Sheppard    | Developer             |
-      | Chaim Hawkins      | Developer             |
-      | Makenna Lucas      | Developer             |
-      | Dorian Osborne     | Developer             |
-      | Lucía Cambil       | Developer             |
-      | Eduvigis Fernández | Developer             |
-      | Aaron Wise         | Developer             |
-      | Dayanara Rosario   | Developer             |
-      | Amya Greene        | Developer             |
-      | Marin Terrell      | Developer             |
-      | Jamie Ashley       | Developer             |
-      | Dominique Burke    | Developer             |
-      | Ascensión Cortés   | Developer             |
-      | Darien Novak       | Developer             |
+      | name               | title                 | tools                                          |
+      | Anita N Smith      | CEO                   | People Management, Finance, Architecture       |
+      | Jeremy Tamsin      | Executive Assistant   | People Management                              |
+      | Yarik Aina         | CPO                   | People Management                              |
+      | Juliet Boban       | Senior Talent Manager | People Management                              |
+      | Mao Josie          | CFO                   | Finance                                        |
+      | Ebba Titus         | Finance Admin         | Finance                                        |
+      | Carson Rodriguez   | Finance Admin         | Finance                                        |
+      | Itzel Leonard      | New Business          | People Management, Finance                     |
+      | Paulina Rice       | CTO                   | People Management, Architecture                |
+      | Damon Ross         | Business Head         | People Management, Finance                     |
+      | Rhys Wolfe         | Business Head         | People Management, Finance                     |
+      | Mathias Rowland    | Product Owner         | People Management, Finance, Project Management |
+      | Cosme Calvo        | Product Owner         | People Management, Finance, Project Management |
+      | Marshall Schaefer  | Product Owner         | People Management, Finance, Project Management |
+      | Bentley French     | Designer              | Figma                                          |
+      | Harper Guerra      | Designer              | Figma                                          |
+      | Inés Ferrer        | Designer              | Figma                                          |
+      | Aurora Cantu       | Designer              | Figma                                          |
+      | Cayden Smith       | Designer              | Figma                                          |
+      | Drake Collins      | Designer              | Photoshop                                      |
+      | Ricardo Crespo     | Designer              | Photoshop                                      |
+      | Mara Welch         | Designer              | Photoshop                                      |
+      | Slade Logan        | Copywriter            | MS Word                                        |
+      | Jovany Coffey      | Copywriter            | MS Word                                        |
+      | Jaydon Dennis      | Copywriter            | MS Word                                        |
+      | Daniel Santiago    | Copywriter            | Google Docs                                    |
+      | Arnav Lam          | Copywriter            | Google Docs                                    |
+      | Dax Joyce          | Copywriter            | Google Docs, Notion                            |
+      | Aitor Peña         | Copywriter            | Google Docs                                    |
+      | Marcos Durán       | Developer             | JavaScript                                     |
+      | Damon Kaufman      | Developer             | JavaScript                                     |
+      | Ifigenia Serrano   | Developer             | JavaScript                                     |
+      | Arturo Marín       | Developer             | JavaScript                                     |
+      | Carolina Velasquez | Developer             | JavaScript                                     |
+      | Nehemiah Murphy    | Developer             | JavaScript                                     |
+      | Marco Marks        | Developer             | JavaScript                                     |
+      | Leandro Ortiz      | Developer             | JavaScript                                     |
+      | Armando Mejia      | Developer             | JavaScript                                     |
+      | Alberto Gregory    | Developer             | JavaScript                                     |
+      | Amirah Sheppard    | Developer             | JavaScript                                     |
+      | Chaim Hawkins      | Developer             | JavaScript                                     |
+      | Makenna Lucas      | Developer             | Ruby                                           |
+      | Dorian Osborne     | Developer             | Ruby                                           |
+      | Lucía Cambil       | Developer             | Ruby                                           |
+      | Eduvigis Fernández | Developer             | Ruby                                           |
+      | Aaron Wise         | Developer             | Ruby                                           |
+      | Dayanara Rosario   | Developer             | C#                                             |
+      | Amya Greene        | Developer             | C#                                             |
+      | Marin Terrell      | Developer             | C#                                             |
+      | Jamie Ashley       | Developer             | C#                                             |
+      | Dominique Burke    | Developer             | C#                                             |
+      | Ascensión Cortés   | Developer             | C#                                             |
+      | Darien Novak       | Developer             | C#                                             |
 
   Scenario: Use search box to filter people by name
     When the user visits the "Home" page

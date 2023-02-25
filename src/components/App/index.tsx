@@ -9,7 +9,7 @@ import styles from "./index.module.css";
 
 const App: Component = () => {
   const [organisation] = createResource(getCurrentOrganisation, {
-    initialValue: { name: "", people: [], teams: [] },
+    initialValue: { name: "", people: [], teams: [], tools: [] },
   });
   const [peopleList, setPeopleList] = createSignal([] as Person[]);
 
@@ -60,6 +60,11 @@ const App: Component = () => {
               <li>
                 <h3>{person.name}</h3>
                 <h4>{person.title}</h4>
+                <ul aria-label="Tools">
+                  <For each={person.toolNames}>
+                    {(tool) => <li>{tool.name}</li>}
+                  </For>
+                </ul>
               </li>
             )}
           </For>
