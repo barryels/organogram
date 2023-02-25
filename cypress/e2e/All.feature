@@ -78,23 +78,44 @@ Feature: All
 
   Scenario: Use search box to filter people by name
     When the user visits the "Home" page
-    And they type "b" in the "Search by name" input
+    And they type "b" in the "Search by anything" input
     And the following list of people should be visible
-      | name            |
-      | Juliet Boban    |
-      | Ebba Titus      |
-      | Bentley French  |
-      | Alberto Gregory |
-      | Dorian Osborne  |
-      | Lucía Cambil    |
-      | Dominique Burke |
-    And they type "b" in the "Search by name" input
+      | name               |
+      | Juliet Boban       |
+      | Ebba Titus         |
+      | Bentley French     |
+      | Alberto Gregory    |
+      | Makenna Lucas      |
+      | Dorian Osborne     |
+      | Lucía Cambil       |
+      | Eduvigis Fernández |
+      | Aaron Wise         |
+      | Dominique Burke    |
+    And they type "b" in the "Search by anything" input
     And the following list of people should be visible
       | name          |
       | Ebba Titus    |
-    When they clear the "Search by name" input
-    And they type "ANI" in the "Search by name" input
+    When they clear the "Search by anything" input
+    And they type "ANI" in the "Search by anything" input
     And the following list of people should be visible
       | name            |
       | Anita N Smith   |
       | Daniel Santiago |
+
+  Scenario: Use search box to filter people by tool
+    When the user visits the "Home" page
+    And they type "javasc" in the "Search by anything" input
+    And the following list of people should be visible
+      | name               |
+      | Marcos Durán       |
+      | Damon Kaufman      |
+      | Ifigenia Serrano   |
+      | Arturo Marín       |
+      | Carolina Velasquez |
+      | Nehemiah Murphy    |
+      | Marco Marks        |
+      | Leandro Ortiz      |
+      | Armando Mejia      |
+      | Alberto Gregory    |
+      | Amirah Sheppard    |
+      | Chaim Hawkins      |

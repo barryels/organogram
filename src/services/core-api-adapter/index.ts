@@ -4,8 +4,7 @@ export interface Person {
   id: string;
   name: string;
   title: string;
-  tools: ToolID[];
-  toolNames: Tool[];
+  toolIds: ToolID[];
 }
 
 interface Tool {
@@ -13,12 +12,12 @@ interface Tool {
   name: string;
 }
 
-export interface HydratedPerson {
+export interface PersonHydrated {
   id: string;
   name: string;
   title: string;
-  tools: ToolID[];
-  toolNames: Tool[];
+  toolIds: ToolID[];
+  tools: Tool[];
 }
 
 interface Team {
@@ -33,7 +32,14 @@ interface Organisation {
   teams: Team[];
 }
 
-export function getCurrentOrganisation(): Promise<Organisation> {
+interface OrganisationHydrated {
+  name: string;
+  tools: Tool[];
+  people: PersonHydrated[];
+  teams: Team[];
+}
+
+export function getCurrentOrganisation(): Promise<OrganisationHydrated> {
   return fetch(`./organisations/current.json`)
     .then((res) => {
       return res.json();
@@ -52,8 +58,8 @@ export function getCurrentOrganisation(): Promise<Organisation> {
     });
 }
 
-function hydrateTools(person: Person, tools: Tool[]): HydratedPerson {
-  const hydratedTools = person.tools.map((id) => {
+function hydrateTools(person: Person, tools: Tool[]): PersonHydrated {
+  const hydratedTools = person.toolIds.map((id) => {
     const foundTool = tools.find((tool) => tool.id === id);
     return foundTool
       ? foundTool
@@ -65,6 +71,6 @@ function hydrateTools(person: Person, tools: Tool[]): HydratedPerson {
 
   return {
     ...person,
-    toolNames: hydratedTools,
+    tools: hydratedTools,
   };
 }

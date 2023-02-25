@@ -1,8 +1,8 @@
 import { createEffect, createResource, createSignal, For } from "solid-js";
 import type { Component } from "solid-js";
 import {
-  Person,
   getCurrentOrganisation,
+  PersonHydrated,
 } from "../../services/core-api-adapter";
 
 import styles from "./index.module.css";
@@ -11,7 +11,7 @@ const App: Component = () => {
   const [organisation] = createResource(getCurrentOrganisation, {
     initialValue: { name: "", people: [], teams: [], tools: [] },
   });
-  const [peopleList, setPeopleList] = createSignal([] as Person[]);
+  const [peopleList, setPeopleList] = createSignal([] as PersonHydrated[]);
 
   createEffect(() => {
     if (organisation()) {
@@ -20,11 +20,17 @@ const App: Component = () => {
     }
   });
 
-  function onNameSearchInputChange(e: any) {
+  function onMultiAttributeSearchInputChange(e: any) {
     const value = e.target.value;
+
     setPeopleList(
       organisation().people.filter((person) => {
-        return person.name.toLowerCase().indexOf(value.toLowerCase()) > -1;
+        return (
+          person.name.toLowerCase().indexOf(value.toLowerCase()) > -1 ||
+          person.tools.filter((tool) => {
+            return tool.name.toLowerCase().indexOf(value.toLowerCase()) > -1;
+          }).length > 0
+        );
       })
     );
   }
@@ -44,9 +50,9 @@ const App: Component = () => {
       <section>
         <form onSubmit={onSearchFormSubmit}>
           <input
-            aria-label="Search by name"
+            aria-label="Search by anything"
             type="text"
-            onInput={onNameSearchInputChange}
+            onInput={onMultiAttributeSearchInputChange}
           />
           <button type="submit">Search</button>
         </form>
@@ -61,7 +67,7 @@ const App: Component = () => {
                 <h3>{person.name}</h3>
                 <h4>{person.title}</h4>
                 <ul aria-label="Tools">
-                  <For each={person.toolNames}>
+                  <For each={person.tools}>
                     {(tool) => <li>{tool.name}</li>}
                   </For>
                 </ul>
