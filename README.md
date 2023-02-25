@@ -4,7 +4,7 @@
 
 ## What is this?
 
-This repo is aimed at front-end developers to use as a reference for how to set up and build a project with ATDD. The current Solid.js implementation is just an incidental detail (I wanted to poke around with it anyway). The core idea is that the underlying JS framework should be replaceable without changing a single test.
+This repo is aimed at front-end developers to use as a reference for how to set up and build a project with ATDD, simple build pipelines, code quality metrics, etc. The current Solid.js implementation is just an incidental detail (I wanted to poke around with it anyway). The core idea is that the underlying UI should be replaceable without changing a single test.
 
 ### Testing Structure
 
