@@ -1,11 +1,41 @@
 # Organogram [![Maintainability](https://api.codeclimate.com/v1/badges/4398476b7ff6d9935dc3/maintainability)](https://codeclimate.com/github/barryels/organogram/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4398476b7ff6d9935dc3/test_coverage)](https://codeclimate.com/github/barryels/organogram/test_coverage)
 
+---
+
+## What is this?
+
+This repo is aimed at front-end developers to use as a reference for how to set up and build a project with ATDD. The current Solid.js implementation is just an incidental detail (I wanted to poke around with it anyway). The core idea is that the underlying JS framework should be replaceable without changing a single test.
+
+### Testing Structure
+
+#### Acceptance Tests
+
+```mermaid
+flowchart TD
+  CypressTestRunner["Cypress Test Runner <br><small>npm/cypress</small>"]
+  GherkinFeatureFiles["Gherkin Feature Files <br><small>cypress/integration/*.feature</small>"]
+  CypressCucumberInterpretor["Cypress Cucumber Interpretor <br><small>npm/cypress-cucumber-preprocessor</small>"]
+  StepDefinitions["Step Definitions <br><small>cypress/integration/common/step-definitions.js</small>"]
+  CypressTestingLibrary["Cypress Testing Library <br><small>npm/@testing-library/cypress</small>"]
+  UI["UI"]
+
+  CypressTestRunner -- uses --> CypressCucumberInterpretor
+  CypressCucumberInterpretor -- loads --> GherkinFeatureFiles
+  GherkinFeatureFiles -- uses --> StepDefinitions
+  StepDefinitions -- uses --> CypressTestingLibrary
+  CypressTestingLibrary -- references --> UI
+```
+
+---
+
 ## Getting Started
 
 1. Copy the `.env.example` file
 2. Rename the copied file to `.env`
 3. Update the variables as necessary
 4. Run: `npm install`
+
+---
 
 ## Usage
 
