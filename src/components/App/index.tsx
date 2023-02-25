@@ -1,8 +1,11 @@
 import { createEffect, createResource, createSignal, For } from "solid-js";
 import type { Component } from "solid-js";
-import { Person, getCurrentOrganisation } from "./services/core-api-adapter";
+import {
+  Person,
+  getCurrentOrganisation,
+} from "../../services/core-api-adapter";
 
-import styles from "./App.module.css";
+import styles from "./index.module.css";
 
 const App: Component = () => {
   const [organisation] = createResource(getCurrentOrganisation, {
